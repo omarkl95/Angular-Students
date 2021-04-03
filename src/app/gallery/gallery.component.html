@@ -1,0 +1,62 @@
+
+
+<div class="container mt-5">
+
+    <div class="myContent mb-5">
+      <!-- <button class="btn btn-outline-primary" *ngFor="let countrt of AllCountries" (click)="ChangeCountry(countrt.code)" >  {{countrt.name}} </button> -->
+        <!-- <div class="row">
+          <div class="col-md-12 col-sm-6" >
+            <input [(ngModel)]="term" class="form-control  float-right">
+            <div class="clearfix"></div>
+
+          </div>
+        </div> -->
+      <br>
+      <button (click)="onLogOut()" class="btn btn-danger ">Logout</button>
+
+
+    </div>
+<div class="row">
+  <div class="col-md-4 col-sm-2" *ngFor="let st of students| realSearch:term  let i=index;">
+
+    <div class="item">
+     
+      
+
+        <div class="card" >
+            <span></span>
+            <div class="card-body">
+              <h5 class="card-title">ID:{{st.id}}</h5>
+              <p class="card-text">First Name:{{st.first_name}}</p>
+              <p class="card-text">Last Name:{{st.last_name}}</p>
+              <p class="card-text"></p>
+              <p class="card-text"></p>
+
+
+              <a [routerLink]="['/home',i]" class="btn btn-primary">Read More</a>
+            </div>
+          </div>
+
+
+
+
+
+    </div>
+
+
+
+  </div>
+</div>
+
+
+ 
+
+    <div class="w-50 mx-auto my-5 py-5 d-flex">
+        <div class="p-3 text-black" *ngFor="let page of pagenumbers; let i=index" (click)="changepage(page)">{{page}}</div>
+    </div>
+
+
+
+
+
+</div>
